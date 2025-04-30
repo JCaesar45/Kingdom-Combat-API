@@ -1,0 +1,63 @@
+{
+  "info": {
+    "_postman_id": "fddf1a3e-6e1b-4d14-9c91-d83e8db3d505",
+    "name": "Kingdom Game API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Player",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Player1\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/create_player",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["create_player"]
+        }
+      }
+    },
+    {
+      "name": "Add Structure",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"player_name\": \"Player1\",\n  \"structure_name\": \"Castle\",\n  \"defense\": 20,\n  \"attack\": 5\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/add_structure",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["add_structure"]
+        }
+      }
+    },
+    {
+      "name": "Attack",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"attacker_name\": \"Player1\",\n  \"defender_name\": \"Player2\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/attack",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["attack"]
+        }
+      }
+    }
+  ]
+}
