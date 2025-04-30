@@ -1,0 +1,41 @@
+## 🐍 Option 2: Python Test Script (using `requests`)
+
+Install the `requests` library if you don’t have it:
+```bash
+pip install requests
+```
+
+Then run this script:
+
+```python
+import requests
+
+base_url = "http://127.0.0.1:5000"
+
+# Create Players
+requests.post(f"{base_url}/create_player", json={"name": "Player1"})
+requests.post(f"{base_url}/create_player", json={"name": "Player2"})
+
+# Add Structures
+requests.post(f"{base_url}/add_structure", json={
+    "player_name": "Player1",
+    "structure_name": "Barracks",
+    "defense": 10,
+    "attack": 25
+})
+
+requests.post(f"{base_url}/add_structure", json={
+    "player_name": "Player2",
+    "structure_name": "Wall",
+    "defense": 30,
+    "attack": 5
+})
+
+# Attack
+response = requests.post(f"{base_url}/attack", json={
+    "attacker_name": "Player1",
+    "defender_name": "Player2"
+})
+
+print("Attack result:", response.json())
+```
