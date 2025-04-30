@@ -1,0 +1,21 @@
+1. Set Up Your Environment: Make sure you have Python and pip installed. 
+Create a new directory for your project and navigate into it. sh  Copy code mkdir flask_game cd flask_game  
+
+2. Create a Virtual Environment: 
+This step is optional but recommended to keep dependencies isolated. sh  Copy code python -m venv venv source venv/bin/activate # On Windows, use `venv\Scripts\activate`   
+
+3. Install Flask: Create a requirements.txt file with the following content:  
+Copy code Flask    Then install Flask using pip: sh  Copy code pip install -r requirements.txt
+
+4. Create the Flask Application: 
+Create a file named app.py and paste the provided code into it.
+
+5. Run the Flask Application: 
+Run the Flask application by executing: sh  Copy code python app.py    
+This will start the Flask development server, typically running on http://127.0.0.1:5000.
+
+6. Test the Endpoints: 
+You can use a tool like curl, Postman, or a simple Python script to test the endpoints. Here are examples using curl:
+    * Create a Player: sh  Copy code curl -X POST -H "Content-Type: application/json" -d '{"name": "player1"}' http://127.0.0.1:5000/create_player   
+    * Add a Structure: sh  Copy code curl -X POST -H "Content-Type: application/json" -d '{"player_name": "player1", "structure_name": "tower", "defense": 10, "attack": 5}' http://127.0.0.1:5000/add_structure   
+    * Attack Another Player: sh  Copy code curl -X POST -H "Content-Type: application/json" -d '{"attacker_name": "player1", "defender_name": "player2"}' http://127.0.0.1:5000/attack 
