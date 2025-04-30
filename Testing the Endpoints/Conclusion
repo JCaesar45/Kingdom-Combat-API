@@ -1,0 +1,11 @@
+import requests base_url = 'http://127.0.0.1:5000' # Create players response = requests.post(f'{base_url}/create_player', json={'name': 'player1'}) 
+print(response.json()) response = requests.post(f'{base_url}/create_player', json={'name': 'player2'}) print(response.json()) 
+
+# Add structures to players response = requests.post(f'{base_url}/add_structure', 
+json={'player_name': 'player1', 'structure_name': 'tower', 'defense': 10, 'attack': 
+5}) print(response.json()) response = requests.post(f'{base_url}/add_structure', json={'player_name': 
+'player2', 'structure_name': 'wall', 'defense': 15, 'attack': 2}) print(response.json()) 
+# Attack response = requests.post(f'{base_url}/attack', json={'attacker_name': 'player1', 'defender_name': 'player2'}) print(response.json())
+
+-This script will create two players, add structures to their kingdoms, and perform an attack. The output will show the responses from each endpoint, indicating whether the operations were successful or if any errors occurred.
+By following these steps, you should be able to test the Flask application and ensure the functionality of the provided code.-
