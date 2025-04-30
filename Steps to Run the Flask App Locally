@@ -1,0 +1,39 @@
+### ✅ Steps to Run the Flask App Locally
+
+1. **Install Python (if not already installed):**
+   Ensure you have Python 3.x installed. You can check by running:
+   ```bash
+   python --version
+   ```
+
+2. **Set up a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   Create a `requirements.txt` with the following line:
+   ```
+   Flask
+   ```
+   Then run:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Save your Python code:**
+   Save the code you provided in a file named `app.py`.
+
+5. **Run the Flask app:**
+   ```bash
+   python app.py
+   ```
+
+6. **Test with cURL or Postman:**
+   You can test endpoints like:
+   ```bash
+   curl -X POST http://127.0.0.1:5000/create_player -H "Content-Type: application/json" -d "{\"name\":\"Player1\"}"
+   ```
+
+---
